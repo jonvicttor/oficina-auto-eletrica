@@ -1,60 +1,114 @@
-Sistema de Gerenciamento para Oficina Auto Elétrica
+# ⚡ Sistema de Gerenciamento para Oficina Auto Elétrica
 
-Este projeto é um sistema web para gerenciamento de operações de uma oficina de auto elétrica, desenvolvido como um projeto acadêmico. Ele oferece uma interface para gerir clientes, veículos, ordens de serviço, peças e serviços.
-Como Usar a Aplicação
+Este projeto é um sistema **web** para gerenciamento de operações de uma oficina de auto elétrica, desenvolvido como um **projeto acadêmico**.  
+Ele oferece uma interface para gerir **clientes, veículos, ordens de serviço, peças e serviços**.
 
-Para utilizar a aplicação, siga estes passos:
+---
 
-    Clone o Repositório:
-    Abra o seu terminal e clone o projeto usando o comando git clone.
+## 📖 Índice
+- [Sobre](#-sobre)
+- [Tecnologias](#-tecnologias)
+- [Como Usar a Aplicação](#-como-usar-a-aplicação)
+- [Funcionalidades Principais](#-funcionalidades-principais)
+  - [Clientes](#clientes)
+  - [Veículos](#veículos)
+  - [Ordens de Serviço](#ordens-de-serviço)
+  - [Peças e Serviços](#peças-e-serviços)
+  - [Itens da OS](#itens-da-os)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
 
-    Abra os Arquivos:
-    Navegue até o diretório do projeto e abra o arquivo index.html no seu navegador web de preferência (como Google Chrome, Firefox ou Edge).
+---
 
-    Ambiente de Servidor:
-    A aplicação foi projetada para interagir com uma API REST. Embora a lógica para a comunicação (fetch com localhost:8080/api) já esteja implementada, ela requer que um servidor de backend esteja rodando localmente para que as operações de Criação, Leitura, Atualização e Exclusão (CRUD) funcionem corretamente.
+## 📌 Sobre
+O sistema foi projetado para facilitar a administração de uma **oficina auto elétrica**, permitindo:
+- Cadastro e gerenciamento de clientes.
+- Registro de veículos e associação ao proprietário.
+- Criação e controle de ordens de serviço.
+- Gestão de peças em estoque e serviços oferecidos.
+- Vinculação de itens (peças/serviços) a ordens de serviço.
 
-Funcionalidades Principais
+---
 
-O sistema é dividido em seções que podem ser acessadas através do menu de navegação no topo da página.
-1. Clientes
+## 🛠 Tecnologias
+O projeto utiliza as seguintes tecnologias:
 
-    Adicionar Cliente: Preencha o formulário com o nome, CPF, telefone e email. A aplicação irá validar se os campos obrigatórios foram preenchidos corretamente.
+### Backend
+- **Java 17**
+- **Spring Boot**
+- **Spring Data JPA**
+- **MySQL** (Banco de Dados)
 
-    Visualizar Clientes: A tabela exibe todos os clientes cadastrados.
+### Frontend
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
 
-    Editar/Excluir Cliente: Use os botões Editar e Excluir na tabela para modificar ou remover um cliente existente.
+---
 
-2. Veículos
+## ▶️ Como Usar a Aplicação
 
-    Adicionar Veículo: Insira a placa, marca, modelo e ano do veículo. É necessário informar o ID de um cliente existente para vincular o veículo ao proprietário.
+### 1. Clone o Repositório
+```bash
+git clone https://github.com/seu-usuario/oficina-autoeletrica.git
+2. Abra os Arquivos
 
-    Visualizar Veículos: A tabela lista todos os veículos e o ID do seu respectivo proprietário.
+Navegue até o diretório frontend/.
 
-    Editar/Excluir Veículo: Botões na tabela permitem a edição e exclusão.
+Abra o arquivo index.html em um navegador (Chrome, Firefox, Edge etc.).
 
-3. Ordens de Serviço
+3. Configure o Servidor
 
-    Criar Ordem de Serviço: Registre uma nova ordem de serviço informando a data de entrada, status, descrição do problema e o ID do veículo associado.
+O backend deve estar rodando em localhost:8080.
 
-    Visualizar Ordens de Serviço: A tabela mostra todas as ordens de serviço cadastradas.
+A comunicação entre frontend e backend é feita via API REST.
 
-    Editar/Excluir Ordem de Serviço: Opções de edição e exclusão estão disponíveis na tabela.
+Sem o backend, as operações de CRUD não funcionam.
 
-4. Peças e Serviços
+🔧 Funcionalidades Principais
 
-    Gerenciar Peças: Adicione novas peças ao estoque com nome, preço e quantidade. A tabela exibe as informações e o estoque atual.
+O sistema é dividido em seções acessadas pelo menu de navegação.
 
-    Gerenciar Serviços: Registre os serviços oferecidos pela oficina, com nome, descrição e valor da mão de obra.
+📌 Clientes
 
-5. Itens da OS
+Adicionar Cliente: Nome, CPF, telefone e e-mail.
 
-    Adicionar Item à OS: Nesta seção, você pode adicionar peças ou serviços a uma ordem de serviço já existente. É obrigatório informar a quantidade e o ID da Ordem de Serviço, além do ID da peça ou do serviço.
+Visualizar Clientes: Listagem completa.
 
-Estrutura do Projeto
+Editar/Excluir Cliente: Modificação e remoção direta.
 
-O projeto segue uma arquitetura modular com uma clara separação entre a camada de frontend e a de backend.
+🚗 Veículos
 
+Adicionar Veículo: Placa, marca, modelo, ano e ID do proprietário.
+
+Visualizar Veículos: Tabela com dados completos.
+
+Editar/Excluir Veículo: Ações via botões.
+
+🛠️ Ordens de Serviço
+
+Criar OS: Data de entrada, status, descrição do problema, ID do veículo.
+
+Visualizar OS: Todas as ordens registradas.
+
+Editar/Excluir OS: Gerenciamento via tabela.
+
+🔩 Peças e Serviços
+
+Gerenciar Peças: Nome, preço e quantidade no estoque.
+
+Gerenciar Serviços: Nome, descrição e valor da mão de obra.
+
+📋 Itens da OS
+
+Adicionar Itens: Associar peças e serviços a uma OS existente.
+
+Campos obrigatórios: quantidade, ID da OS, ID da peça/serviço.
+
+📂 Estrutura do Projeto
+
+O projeto é dividido em frontend e backend:
 oficina-autoeletrica/
 ├── frontend/
 │   ├── clientes.html
@@ -69,40 +123,32 @@ oficina-autoeletrica/
 └── backend/
     └── src/
         ├── main/
-        │   ├── java/
-        │   │   └── com/
-        │   │       └── seuprojeto/
-        │   │           └── oficina_autoeletrica/
-        │   │               ├── config/
-        │   │               │   └── WebConfig.java
-        │   │               ├── controller/
-        │   │               │   ├── ClienteController.java
-        │   │               │   ├── ItemOrdemDeServicoController.java
-        │   │               │   ├── OrdemDeServicoController.java
-        │   │               │   ├── PecaController.java
-        │   │               │   ├── ServicoController.java
-        │   │               │   └── VeiculoController.java
-        │   │               ├── entity/
-        │   │               │   ├── Cliente.java
-        │   │               │   ├── ItemOrdemDeServico.java
-        │   │               │   ├── OrdemDeServico.java
-        │   │               │   ├── Peca.java
-        │   │               │   ├── Servico.java
-        │   │               │   └── Veiculo.java
-        │   │               ├── repository/
-        │   │               │   ├── ClienteRepository.java
-        │   │               │   ├── ItemOrdemDeServicoRepository.java
-        │   │               │   ├── OrdemDeServicoRepository.java
-        │   │               │   ├── PecaRepository.java
-        │   │               │   ├── ServicoRepository.java
-        │   │               │   └── VeiculoRepository.java
-        │   │               └── OficinaAutoeletricaApplication.java
+        │   ├── java/com/seuprojeto/oficina_autoeletrica/
+        │   │   ├── config/
+        │   │   │   └── WebConfig.java
+        │   │   ├── controller/
+        │   │   │   ├── ClienteController.java
+        │   │   │   ├── ItemOrdemDeServicoController.java
+        │   │   │   ├── OrdemDeServicoController.java
+        │   │   │   ├── PecaController.java
+        │   │   │   ├── ServicoController.java
+        │   │   │   └── VeiculoController.java
+        │   │   ├── entity/
+        │   │   │   ├── Cliente.java
+        │   │   │   ├── ItemOrdemDeServico.java
+        │   │   │   ├── OrdemDeServico.java
+        │   │   │   ├── Peca.java
+        │   │   │   ├── Servico.java
+        │   │   │   └── Veiculo.java
+        │   │   ├── repository/
+        │   │   │   ├── ClienteRepository.java
+        │   │   │   ├── ItemOrdemDeServicoRepository.java
+        │   │   │   ├── OrdemDeServicoRepository.java
+        │   │   │   ├── PecaRepository.java
+        │   │   │   ├── ServicoRepository.java
+        │   │   │   └── VeiculoRepository.java
+        │   │   └── OficinaAutoeletricaApplication.java
         │   └── resources/
         │       └── application.properties
-        └── test/
-            └── java/
-                └── com/
-                    └── seuprojeto/
-                        └── oficina_autoeletrica/
-                            └── OficinaAutoeletricaApplicationTests.java
-
+        └── test/java/com/seuprojeto/oficina_autoeletrica/
+            └── OficinaAutoeletricaApplicationTests.java
