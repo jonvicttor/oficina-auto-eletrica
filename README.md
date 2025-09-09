@@ -53,100 +53,57 @@ O sistema é dividido em seções que podem ser acessadas através do menu de na
 
 Estrutura do Projeto
 
-O projeto segue uma arquitetura modular, com a lógica de navegação e as operações CRUD sendo controladas pelo JavaScript.
+O projeto segue uma arquitetura modular com uma clara separação entre a camada de frontend e a de backend.
 
-    Frontend:
-
-        index.html: A página principal que carrega os outros componentes e a lógica.
-
-        clientes.html, veiculos.html, etc.: Arquivos que contêm a estrutura HTML de cada entidade.
-
-        script.js: Arquivo que contém toda a lógica da aplicação, desde a navegação dinâmica até a comunicação com a API.
-
-        style.css: Estilos personalizados que complementam o framework Tailwind CSS.
-
-    Backend (Java Spring Boot):
-
-        oficina-autoeletrica/
-
-            src/
-
-                main/
-
-                    java/
-
-                        com/
-
-                            seuprojeto/
-
-                                oficina_autoeletrica/
-
-                                    OficinaAutoeletricaApplication.java: Classe principal para iniciar a aplicação.
-
-                                    config/: Classes de configuração.
-
-                                        WebConfig.java
-
-                                    controller/: Controladores REST para gerenciar as requisições.
-
-                                        ClienteController.java
-
-                                        ItemOrdemDeServicoController.java
-
-                                        OrdemDeServicoController.java
-
-                                        PecaController.java
-
-                                        ServicoController.java
-
-                                        VeiculoController.java
-
-                                    entity/: Modelos de dados.
-
-                                        Cliente.java
-
-                                        ItemOrdemDeServico.java
-
-                                        OrdemDeServico.java
-
-                                        Peca.java
-
-                                        Servico.java
-
-                                        Veiculo.java
-
-                                    repository/: Interfaces para acesso ao banco de dados.
-
-                                        ClienteRepository.java
-
-                                        ItemOrdemDeServicoRepository.java
-
-                                        OrdemDeServicoRepository.java
-
-                                        PecaRepository.java
-
-                                        ServicoRepository.java
-
-                                        VeiculoRepository.java
-
-                test/: Arquivos de teste.
-
-                resources/: Arquivos de recursos.
-
-Estrutura de Pastas
-
-oficina-auto-eletrica/
+oficina-autoeletrica/
 ├── frontend/
-│   ├── index.html
 │   ├── clientes.html
-│   ├── veiculos.html
+│   ├── index.html
+│   ├── itens-os.html
 │   ├── ordens-de-servico.html
 │   ├── pecas.html
 │   ├── servicos.html
-│   ├── itens-os.html
 │   ├── script.js
-│   └── style.css
+│   ├── style.css
+│   └── veiculos.html
 └── backend/
     ├── src/
-    └── ...
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   └── com/
+    │   │   │       └── seuprojeto/
+    │   │   │           └── oficina_autoeletrica/
+    │   │   │               ├── config/
+    │   │   │               │   └── WebConfig.java
+    │   │   │               ├── controller/
+    │   │   │               │   ├── ClienteController.java
+    │   │   │               │   ├── ItemOrdemDeServicoController.java
+    │   │   │               │   ├── OrdemDeServicoController.java
+    │   │   │               │   ├── PecaController.java
+    │   │   │               │   ├── ServicoController.java
+    │   │   │               │   └── VeiculoController.java
+    │   │   │               ├── entity/
+    │   │   │               │   ├── Cliente.java
+    │   │   │               │   ├── ItemOrdemDeServico.java
+    │   │   │               │   ├── OrdemDeServico.java
+    │   │   │               │   ├── Peca.java
+    │   │   │               │   ├── Servico.java
+    │   │   │               │   └── Veiculo.java
+    │   │   │               ├── repository/
+    │   │   │               │   ├── ClienteRepository.java
+    │   │   │               │   ├── ItemOrdemDeServicoRepository.java
+    │   │   │               │   ├── OrdemDeServicoRepository.java
+    │   │   │               │   ├── PecaRepository.java
+    │   │   │               │   ├── ServicoRepository.java
+    │   │   │               │   └── VeiculoRepository.java
+    │   │   │               └── OficinaAutoeletricaApplication.java
+    │   │   └── resources/
+    │   │       └── application.properties
+    │   └── test/
+    │       └── java/
+    │           └── com/
+    │               └── seuprojeto/
+    │                   └── oficina_autoeletrica/
+    │                       └── OficinaAutoeletricaApplicationTests.java
+    └── pom.xml
 
