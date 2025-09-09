@@ -1,0 +1,69 @@
+<section id="itens-os-section" class="bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">Gerenciar Itens da Ordem de Serviço</h2>
+    
+    <!-- Formulário de Cadastro de Item da OS -->
+    <div class="mb-8 p-4 border border-gray-200 rounded-md bg-gray-50">
+        <h3 class="text-xl font-medium text-gray-700 mb-3" id="item-os-form-title">Adicionar Novo Item à Ordem de Serviço</h3>
+        <form id="item-os-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="hidden" id="item-os-id" name="id"> <!-- Campo oculto para o ID em caso de edição -->
+            <div>
+                <label for="item-os-quantidade" class="block text-sm font-medium text-gray-700">Quantidade:</label>
+                <input type="number" id="item-os-quantidade" name="quantidade" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="item-os-ordem-id" class="block text-sm font-medium text-gray-700">ID da Ordem de Serviço:</label>
+                <input type="number" id="item-os-ordem-id" name="ordemDeServicoId" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <p class="mt-1 text-xs text-gray-500">A OS deve existir.</p>
+            </div>
+            <div class="md:col-span-2">
+                <label for="item-os-tipo" class="block text-sm font-medium text-gray-700">Tipo de Item:</label>
+                <select id="item-os-tipo" name="tipoItem" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="">Selecione (Peça ou Serviço)</option>
+                    <option value="peca">Peça</option>
+                    <option value="servico">Serviço</option>
+                </select>
+            </div>
+            <div id="item-os-peca-group" class="md:col-span-2 hidden">
+                <label for="item-os-peca-id" class="block text-sm font-medium text-gray-700">ID da Peça:</label>
+                <input type="number" id="item-os-peca-id" name="pecaId" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <p class="mt-1 text-xs text-gray-500">A peça deve existir. Deixe vazio se for serviço.</p>
+            </div>
+            <div id="item-os-servico-group" class="md:col-span-2 hidden">
+                <label for="item-os-servico-id" class="block text-sm font-medium text-gray-700">ID do Serviço:</label>
+                <input type="number" id="item-os-servico-id" name="servicoId" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <p class="mt-1 text-xs text-gray-500">O serviço deve existir. Deixe vazio se for peça.</p>
+            </div>
+            <div class="md:col-span-2 flex justify-end space-x-2">
+                <button type="submit" id="item-os-submit-button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                    Adicionar Item
+                </button>
+                <button type="button" id="item-os-cancel-button" class="hidden inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                    Cancelar Edição
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Lista de Itens da OS -->
+    <h3 class="text-xl font-medium text-gray-700 mb-3">Itens da Ordem de Serviço Cadastrados</h3>
+    <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-blue-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantidade</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">OS (ID)</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Peça (ID)</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serviço (ID)</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="itens-os-table-body" class="bg-white divide-y divide-gray-200">
+                <!-- Itens da OS serão carregados aqui via JavaScript -->
+                <tr>
+                    <td colspan="6" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">Carregando itens da OS...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

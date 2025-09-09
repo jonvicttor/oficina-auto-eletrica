@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Oficina Auto Elétrica</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-inter">
+    <!-- Cabeçalho da aplicação com navegação -->
+    <header class="bg-blue-700 text-white shadow-lg">
+        <div class="container mx-auto py-4 px-4 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-4 sm:mb-0">Oficina Auto Elétrica</h1>
+            <nav>
+                <ul class="flex flex-wrap justify-center sm:justify-start space-x-4">
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md active-nav-link" data-target="clientes">Clientes</a></li>
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md" data-target="veiculos">Veículos</a></li>
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md" data-target="ordens-de-servico">Ordens de Serviço</a></li>
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md" data-target="pecas">Peças</a></li>
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md" data-target="servicos">Serviços</a></li>
+                    <li><a href="#" class="nav-link text-blue-200 hover:text-white transition duration-300 px-3 py-2 rounded-md" data-target="itens-os">Itens da OS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Área principal onde o conteúdo das seções será carregado dinamicamente -->
+    <main id="main-content" class="container mx-auto mt-8 px-4">
+        <!-- O conteúdo das outras páginas HTML será injetado aqui via JavaScript -->
+    </main>
+
+    <!-- Modal para mensagens e confirmações -->
+    <div id="app-modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
+            <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+            <p id="modal-message" class="mb-6"></p>
+            <div id="modal-actions" class="flex justify-end space-x-4">
+                <button id="modal-cancel-button" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition duration-300 hidden">Cancelar</button>
+                <button id="modal-confirm-button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclui o arquivo JavaScript principal -->
+    <script src="script.js"></script>
+</body>
+</html>
